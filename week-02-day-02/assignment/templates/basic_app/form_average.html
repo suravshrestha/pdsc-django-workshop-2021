@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Average of two numbers calculator{% endblock title %}
+
+{% block content %}
+  <h2>Fill out the form to find the average of two numbers</h2>
+
+  <form method="post">
+    {% csrf_token %} 
+    
+    {{ form.as_p }}
+
+    <input type="submit" value="Find average" />
+  </form>
+{% endblock content %}
