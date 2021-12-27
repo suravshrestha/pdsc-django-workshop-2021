@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Send{% endblock title %} 
+
+{% block content %}
+    <form action="{% url 'receive' %}" method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Example textarea</label>
+            <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock content %}
