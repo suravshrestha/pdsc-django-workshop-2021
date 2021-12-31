@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Empty todo{% endblock title %}
+
+{% block content %}
+    You can't create an empty todo!
+
+    <br>
+    
+    <a href="{% url 'todos' %}">Return to the todos</a>
+{% endblock content %}

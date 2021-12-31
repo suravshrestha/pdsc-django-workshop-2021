@@ -1,6 +1,4 @@
-from django.http.response import HttpResponse
-from django.shortcuts import render
-# from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -14,26 +12,35 @@ def about(request):
     return render(request, "pages/about.html")
 
 
-def send(request):
-    return render(request, "pages/send.html")
-
-
-def receive(request):
-    if request.method == "GET":
-        # Normal HTTP request (eg. when a URL typed in the browser - in this case /receive)
-        html = f"You didn't fill any form. You just typed in the URL in the browser."
-
-        return HttpResponse(html)
-
+def todo(request):
     if request.method == "POST":
-        # Form submission
-        request_obj = request.POST
+        # Add todo
+        todo = request.POST.get("todo")
 
-        email = request_obj.get("email")
-        text = request_obj.get("text")
-        password = request_obj.get("password")
+        if not todo.strip():
+            # Empty todo
+            return render(request, "pages/empty-todo.html")
 
-        html = (f"Hey there! You were redirected here because you filled in a form."
-                f"<p>Details you provided:<br>{email = }<br>{text = }<br>{password = }</p>")
+        with open("data.txt", "a+") as file:
+            file.write(todo + "\n")
 
-        return HttpResponse(html)
+    # Display todos
+    todos = open("data.txt", "r").readlines()
+    context_dict = {"todos": enumerate(todos)}
+
+    return render(request, "pages/todo.html", context=context_dict)
+
+
+def remove_todo(request, pk):
+    line_num = pk + 1
+    lines = open("data.txt", "r").readlines()
+
+    line_ptr = 1
+    with open("data.txt", "w") as f:
+        for line in lines:
+            if line_ptr != line_num:
+                f.write(line)
+
+            line_ptr += 1
+
+    return redirect("todos")
