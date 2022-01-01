@@ -1,7 +1,14 @@
 # PDSC Django Workshop 2021
+This repository contains the lecture projects and assignments of the workshop organized by PDSC.
+
+PDSC (Plan | Design | Solve | Create) (initially named as Pulchowk Data Science Community, started at IOE, Pulchowk campus) is a community of students who are interested in IT. They organize workshops related to Python, Data Science, Machine Learning, web development, MATLAB and other related topics.
+
+The workshop runs for a total span of 4 weeks -- 3 days a week.<br>
+The lectures are live and one-hour long, from 6:30 to 7:30, each Friday, Saturday, and Sunday.
+
+[PDSC Facebook group](https://www.facebook.com/groups/2781195002157144/)
 
 ## Week 1
-
 Day 1 - Basics of Object Oriented Programming(OOP) in Python<br>
 Day 2 - Real world implementation of OOP in Python<br>
 Day 3 - Introduction to django<br>
