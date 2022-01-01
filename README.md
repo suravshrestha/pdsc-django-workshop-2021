@@ -8,6 +8,50 @@ The lectures are live and one-hour long, from 6:30 to 7:30, each Friday, Saturda
 
 [PDSC Facebook group](https://www.facebook.com/groups/2781195002157144/)
 
+## Requirements
+- Python 3.2+
+
+## Usage
+1.  Clone the repository 
+```
+git clone https://github.com/suravshrestha/pdsc-django-workshop-2021.git
+```
+
+2.  Navigate to the repository :open_file_folder:
+```
+cd pdsc-django-workshop-2021
+```
+
+3. Create a virtual environment
+```
+python -m venv venv
+```
+
+4. Activate the virtual environment
+```
+.\venv\Scripts\activate
+```
+
+5. Install the dependencies:
+```
+pip install -r requirements.txt
+```
+
+6. Change the working directory to the django project you want to view
+
+7. Make migrations and migrate
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
+8. Start the development server
+```
+python manage.py runserver
+```
+
+9. Open your browser and go to your local domain `http://127.0.0.1:8000`
+
 ## Week 1
 Day 1 - Basics of Object Oriented Programming(OOP) in Python<br>
 Day 2 - Real world implementation of OOP in Python<br>
