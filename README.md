@@ -18,6 +18,10 @@ Day 1 - Views and URL configurations<br>
 Day 2 - Templates<br>
 Day 3 - Practice with todo project<br>
 
+## Week 3
+Day 1 - Database and Model<br>
+Day 2 - Django forms<br>
+
 ## Assignments:
 <details>
   <summary>Week 1 Day 1</summary>
